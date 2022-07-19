@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pegasus</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+        <!-- Demo styles -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            bluee: '#1997B2',
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alata&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap" />
+    </head>
+    <body class="bg-black overflow-x-hidden">
+
+        <!-- Navbar Start -->
+        <div class="container m-auto bg-black">
+            <nav class="px-2 py-5 border-gray-200 rounded lg:px-16 sm:px-4">
+                <div class="container flex flex-wrap items-center justify-between mx-auto">
+                    <a href="/" class="flex items-center">
+                        <img src="img/logo.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+                        <span class="self-center text-xl font-semibold whitespace-nowrap">Flowbite</span>
+                    </a>
+                    <button
+                        data-collapse-toggle="mobile-menu"
+                        type="button"
+                        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                        <svg
+                            class="hidden w-6 h-6"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+                        <ul
+                            class="flex flex-col items-center py-3 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+                        >
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 dark:text-white"
+                                    aria-current="page"
+                                    >Learn</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 dark:text-white"
+                                    aria-current="page"
+                                    >Login</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="relative block p-3 pl-3 pr-4 text-white rounded-full bg-bluee before:absolute before:w-4 before:h-4 before:rounded-full before:top-0 before:right-[-9px] before:bg-red-500"
+                                    data-modal-toggle="authentication-modal"
+                                    aria-current="page"
+                                    >Signup
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar End -->
+
+            <!-- Hero Start -->
+
+            <div class="px-4 mt-24 hero lg:mt-32 lg:px-6">
+                <div class="title flex justify-center items-center"  id="title-img">
+                    <img src="/img/title.png" alt="nft" />
+                </div>
+                <div
+                    class="flex flex-col items-center mt-32 gap-2 sm:flex-row sm:justify-between cta-container sm:mt-44"
+                >
+                    <p class="font-['orbitron'] text-white">
+                        Build in-demand WEB3 skills and earn NFT-based discount coupons...
+                    </p>
+                    <div class="flex justify-between gap-1 cta-btn-cotainer">
+                        <button class="text-white rounded-full border-bluee border-2 px-4 py-2 font-['orbitron']">
+                            Join Discord
+                        </button>
+                        <button class="text-black rounded-full bg-white px-4 py-2 font-['orbitron']">
+                            Explore Classes →
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gra">
+                    <img src="/img/pg-1-top-side-grad.png" class="absolute top-[116px] right-0" />
+                </div>
+            </div>
+
+            <!-- Hero End-->
+
+            <!--How it work start-->
+
+            <div class="px-4 mt-24 how-it-works-container lg:px-16 lg:mt-32">
+                <h2 class="text-4xl text-center text-white title font-['alata']" id="how-it-works-title">
+                    How it <span class="text-bluee">Works ?</span>
+                </h2>
+
+                <img src="img/pg-1-l-side-grad.png" class="absolute top-[456px] left-0" alt="" />
+
+                <div class="flex flex-col items-center learn md:flex-row">
+                    <img src="img/binary-rain.gif" alt="Falling Binary Digits" class="how-it-works-img-1 rounded-3xl" />
+                    <img src="img/dotted-line-1.png" class="hidden md:block" alt="Some dotted Lines" />
+                    <img src="img/learn-logo.png" alt="Some books picture" />
+                    <div class="flex flex-col ml-6 about-text gap-2 explaination-how-it-works">
+                        <h3 class="text-2xl font-bold text-white">Learn</h3>
+                        <p class="font-['orbitron'] text-white text-sm">
+                            We cut the noise, and bring you the best tutors on the internet. So you can focus on
+                            learning what matters
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center mb-32 md:flex-row-reverse earn">
+                    <img src="img/sample-nft.png" alt="Sample NFT Picture" class="my-20 how-it-works-img-2 rounded-3xl" />
+                    <img src="img/dotted-line-2.png" alt="Some dotted Lines" class="hidden md:block" />
+                    <img src="img/earn-logo.png" alt="A wallet logo" />
+                    <div class="flex flex-col mr-6 about-text gap-2 explaination-how-it-works-2">
+                        <h3 class="text-2xl font-bold text-white">Earn</h3>
+                        <p class="font-['orbitron'] text-white text-sm ">
+                            Achieve milestones, earn NFT-based discount coupon that you can redeem at your local
+                            restaurant or shopping centers
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--How it work end-->
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Explore Classes start -->
+        <div class="relative px-10 explore-classes-container">
+            <img src="img/pg-1-classes-grad.png" class="absolute top-0 left-0" alt="" />
+            <div class="relative content top-12">
+                <h2 class="title text-5xl text-white font-['alata'] text-center mb-5">Explore Our Courses</h2>
+
+                <p class="para font-['orbitron'] text-white text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                    Augue suspendisse volutpat cras turpis risus, tellus at nisl.?
+                </p>
+
+                <div class="flex items-center mt-8 overflow-auto courses-types-selector md:justify-center gap-8">
+                    <div class="type py-4 px-6 cursor-pointer font-['orbitron'] text-white bg-bluee rounded-full">
+                        All
+                    </div>
+                    <div
+                        class="type py-4 px-6 cursor-pointer hover:bg-bluee transition-all hover:bg-opacity-10 font-['orbitron'] text-white rounded-full border-bluee border-2"
+                    >
+                        Blockchain
+                    </div>
+                    <div
+                        class="type py-4 px-6 cursor-pointer hover:bg-bluee transition-all hover:bg-opacity-10 font-['orbitron'] text-white rounded-full border-bluee border-2"
+                    >
+                        Bitcoin
+                    </div>
+                    <div
+                        class="type py-4 px-6 cursor-pointer hover:bg-bluee transition-all hover:bg-opacity-10 font-['orbitron'] text-white rounded-full border-bluee border-2"
+                    >
+                        Ehtherum
+                    </div>
+                    <div
+                        class="type py-4 px-6 cursor-pointer hover:bg-bluee transition-all hover:bg-opacity-10 font-['orbitron'] text-white rounded-full border-bluee border-2"
+                    >
+                        Polygon
+                    </div>
+                    <div
+                        class="type py-4 px-6 cursor-pointer hover:bg-bluee transition-all hover:bg-opacity-10 font-['orbitron'] text-white rounded-full border-bluee border-2"
+                    >
+                        Programming
+                    </div>
+                    <div
+                        class="type py-4 px-6 cursor-pointer hover:bg-bluee transition-all hover:bg-opacity-10 font-['orbitron'] text-white rounded-full border-bluee border-2"
+                    >
+                        DEFI
+                    </div>
+                    <div
+                        class="type py-4 px-6 cursor-pointer hover:bg-bluee transition-all hover:bg-opacity-10 font-['orbitron'] text-white rounded-full border-bluee border-2"
+                    >
+                        Game Dev
+                    </div>
+                </div>
+
+                <div class="card-overview my-10 flex flex-col items-stretch justify-center relative swiper w-[100%] lg:w-[900px] mySwiper my-10">
+
+                 
+
+                 <!--  <div class="z-10 hidden controls md:block">
+                            <i
+                                class="fas fa-angle-left text-9xl absolute left-0 text- text-white top-[50%] translate-y-[-50%] "
+                            ></i>
+                          
+
+                          
+                                                     
+
+                            <i
+                                class="fas fa-angle-right text-9xl absolute right-0 text-white top-[50%] translate-y-[-50%]"
+                            ></i>
+                            
+                        </div> -->
+
+                    <div class="flex items-stretch  swiper-wrapper">
+                        
+
+
+                        <!-- SLIDE 1 STARTs -->
+                        <div
+                            class="flex flex-col items-stretch items-center border-2 border-white swiper-slide main rounded-3xl md:flex-row"
+                        >
+                            <div class="img-container md:w-[40%]">
+                                <img
+                                    src="img/course-bitcoin.jpeg"
+                                    alt="Bitcoin rocket"
+                                    class="md:rounded-tl-3xl md:rounded-bl-3xl rounded-tr-3xl rounded-tl-3xl object-cover w-[100%] h-[100%] md:rounded-tr-none"
+                                />
+                            </div>
+
+                            <div
+                                class="text-container md:w-[60%] font-bold py-8 md:px-16 px-4 h-[100%] md:rounded-tr-3xl md:rounded-br-3xl rounded-bl-3xl bg-[#33363A] md:rounded-bl-none"
+                            >
+                                <h2 class="text-white font-['inter'] text-3xl">Taking Off with bitcoin</h2>
+
+                                <div class="flex items-center mt-4 profile gap-8">
+                                    <img
+                                        src="/img/norito-sans-img.jpeg"
+                                        alt="Norito sans"
+                                        class="w-10 h-10 rounded-full"
+                                    />
+                                    <p class="text-white font-['inter'] font-light">Course Led by Norito Sans</p>
+                                </div>
+
+                                <div class="desc">
+                                    <p class="text-white font-['orbitron'] text-sm font-light mt-4">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin molestie
+                                        interdum elit pharetra ut. Phasellus vitae at facilisi egestas molestie.
+                                        Placerat nunc consequat consectetur metus, sed sed. Morbi pretium sit sed
+                                        accumsan porta nec scelerisque. Tristique nibh sem id sit enim lacus id nibh.
+                                        Ultricies et pulvinar at diam amet. Cursus neque amet faucibus ut.
+                                    </p>
+
+                                    <p class="text-white font-['inter'] mt-4">What will you learn</p>
+
+                                    <p class="text-white font-['orbitron'] mt-4">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt odit ipsa
+                                        dolor debitis optio sed ipsam eveniet, neque minus voluptatem tenetur labore,
+                                        magni officiis aperiam nobis tempore modi consequuntur enim expedita in commodi?
+                                        Deleniti iste ipsa optio cum. Ullam, rerum vero. Blanditiis, adipisci!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDE 1 END -->
+
+
+                         <!-- SLIDE 2 STARTs -->
+                        <div
+                            class="flex flex-col items-stretch items-center border-2 border-white swiper-slide main rounded-3xl md:flex-row"
+                        >
+                            <div class="img-container md:w-[40%]">
+                                <img
+                                    src="img/course-bitcoin.jpeg"
+                                    alt="Bitcoin rocket"
+                                    class="md:rounded-tl-3xl md:rounded-bl-3xl rounded-tr-3xl rounded-tl-3xl object-cover w-[100%] h-[100%] md:rounded-tr-none"
+                                />
+                            </div>
+
+                            <div
+                                class="text-container md:w-[60%] font-bold py-8 md:px-16 px-4 h-[100%] md:rounded-tr-3xl md:rounded-br-3xl rounded-bl-3xl rounded-br-3xl bg-[#33363A] md:rounded-bl-none"
+                            >
+                                <h2 class="text-white font-['inter'] text-3xl">Taking Off with bitcoin</h2>
+
+                                <div class="flex items-center mt-4 profile gap-8">
+                                    <img
+                                        src="/img/norito-sans-img.jpeg"
+                                        alt="Norito sans"
+                                        class="w-10 h-10 rounded-full"
+                                    />
+                                    <p class="text-white font-['inter'] font-light">Course Led by Norito Sans</p>
+                                </div>
+
+                                <div class="desc">
+                                    <p class="text-white font-['orbitron'] text-sm font-light mt-4">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin molestie
+                                        interdum elit pharetra ut. Phasellus vitae at facilisi egestas molestie.
+                                        Placerat nunc consequat consectetur metus, sed sed. Morbi pretium sit sed
+                                        accumsan porta nec scelerisque. Tristique nibh sem id sit enim lacus id nibh.
+                                        Ultricies et pulvinar at diam amet. Cursus neque amet faucibus ut.
+                                    </p>
+
+                                    <p class="text-white font-['inter'] mt-4">What will you learn</p>
+
+                                    <p class="text-white font-['orbitron'] mt-4">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt odit ipsa
+                                        dolor debitis optio sed ipsam eveniet, neque minus voluptatem tenetur labore,
+                                        magni officiis aperiam nobis tempore modi consequuntur enim expedita in commodi?
+                                        Deleniti iste ipsa optio cum. Ullam, rerum vero. Blanditiis, adipisci!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDE 2 END -->
+
+
+                         <!-- SLIDE 3 STARTs -->
+                        <div
+                            class="flex flex-col items-stretch items-center border-2 border-white swiper-slide main rounded-3xl md:flex-row"
+                        >
+                            <div class="img-container md:w-[40%]">
+                                <img
+                                    src="img/course-bitcoin.jpeg"
+                                    alt="Bitcoin rocket"
+                                    class="md:rounded-tl-3xl md:rounded-bl-3xl rounded-tr-3xl rounded-tl-3xl object-cover w-[100%] h-[100%] md:rounded-tr-none"
+                                />
+                            </div>
+
+                            <div
+                                class="text-container md:w-[60%] font-bold py-8 md:px-16 px-4 h-[100%] md:rounded-tr-3xl md:rounded-br-3xl rounded-bl-3xl rounded-br-3xl bg-[#33363A] md:rounded-bl-none"
+                            >
+                                <h2 class="text-white font-['inter'] text-3xl">Taking Off with bitcoin</h2>
+
+                                <div class="flex items-center mt-4 profile gap-8">
+                                    <img
+                                        src="/img/norito-sans-img.jpeg"
+                                        alt="Norito sans"
+                                        class="w-10 h-10 rounded-full"
+                                    />
+                                    <p class="text-white font-['inter'] font-light">Course Led by Norito Sans</p>
+                                </div>
+
+                                <div class="desc">
+                                    <p class="text-white font-['orbitron'] text-sm font-light mt-4">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin molestie
+                                        interdum elit pharetra ut. Phasellus vitae at facilisi egestas molestie.
+                                        Placerat nunc consequat consectetur metus, sed sed. Morbi pretium sit sed
+                                        accumsan porta nec scelerisque. Tristique nibh sem id sit enim lacus id nibh.
+                                        Ultricies et pulvinar at diam amet. Cursus neque amet faucibus ut.
+                                    </p>
+
+                                    <p class="text-white font-['inter'] mt-4">What will you learn</p>
+
+                                    <p class="text-white font-['orbitron'] mt-4">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt odit ipsa
+                                        dolor debitis optio sed ipsam eveniet, neque minus voluptatem tenetur labore,
+                                        magni officiis aperiam nobis tempore modi consequuntur enim expedita in commodi?
+                                        Deleniti iste ipsa optio cum. Ullam, rerum vero. Blanditiis, adipisci!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDE 3 END -->
+
+
+
+
+                        
+
+                      </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center md:gap-14 md:flex-row gap-4 cta-btn-cotainer">
+                        <button class="text-black rounded-full bg-white px-16 py-2 font-['orbitron'] cursor-pointer border-2 hover:border-bluee hover:transition-all">
+                            Dive In →
+                        </button>
+                        <button class="text-white rounded-full border-bluee border-2 px-16 py-2 hover:bg-bluee hover:bg-opacity-10 hover:transition-all font-['orbitron'] cursor-pointer">
+                            Load More
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="swiper-button-prev-unique">
+                  <i class="fas fa-angle-left text-9xl absolute left-10 text- text-white top-[50%] translate-y-[40%] hidden lg:block "
+                            ></i>
+                </div>
+                <div class="swiper-button-next-unique">
+                  <i class="fas fa-angle-right text-9xl absolute right-10 text- text-white top-[50%] translate-y-[40%] hidden lg:block "
+                            ></i>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Explore Classes end -->
+
+
+
+        <!-- Partners Start -->
+        <div class="px-10 mt-32 partners-container">
+           <h2 class="text-5xl text-center text-white title font-['alata']">
+                    Our Partners
+           </h2>
+           <div class="flex flex-wrap md:flex-row gap-4 flex-col items-center justify-center my-16 img-container">
+             <img src="/img/partners-img-1.png" class="md:w-[30%]" >
+             <img src="/img/partners-img-2.png" class="md:w-[30%]" >
+             <img src="/img/partners-img-3.png" class="md:w-[30%]" >
+           </div>
+        </div>
+        <!-- Partners End -->
+
+
+
+        <!-- Testimonials Start -->
+        <div class="lg:px-32 px-8 my-32 testimonials-container relative">
+          <h2 class="text-4xl text-center text-white title font-['alata'] mb-8">
+                    What <span class="text-bluee">DEV</span>s Say
+                </h2>
+
+                <img src="/img/testimonials-left-grad.png" class="absolute left-0 top-[70px]">
+
+                <img src="/img/testimonials-right-grad.png" class=" absolute right-0 top-[70px]">
+
+          <div class="testimonial">
+            <div class="grid lg:grid-cols-3 gap-10">
+                
+                <div class="test-1 ">
+                    <div class="top w-full bg-[#33363A] py-10 px-6 border-2 border-white rounded-xl drop-shadow-2xl">
+                            <div class="twitter-logo relative">
+                            <i class="fa-brands fa-twitter text-[#1997B2] absolute top-0 right-0"></i>
+                        </div>
+
+                        <div class="profile ">
+                            <div class="flex gap-4 items-center">
+                                <img src="/img/dev-img-1.jpeg" class="rounded-full w-16 h-16 object-cover">
+                                <div class="text">
+                                    <p class="font-bold text-white font-['alata'] ">Lorem Ipsum</p>
+                                    <p class="font-light text-sm text-gray-300 mt-1">@angesmR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <p class="text-gray-300 px-4 my-4" >
+                                Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Ratione repudiandae corrupti tenetur fugiat aliquid aspernatur nostrum distinctio eaque enim facilis illo accusamus sit praesentium modi voluptas, aut! Tempore, facilis quae est impedit, reprehenderit odio, molestiae repellat soluta esse voluptatibus autem. Totam hic minima, deleniti, cum minus saepe iste molestias. Omnis, tempora obcaecati!
+                            </p>
+
+                            <div class="img-container">
+                                <img src="/img/testimonial-img-1.jpeg" class="rounded-3xl my-8">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom mt-10 w-full bg-[#33363A] py-10 px-6 border-2 border-white rounded-xl drop-shadow-2xl">
+                            <div class="twitter-logo relative">
+                            <i class="fa-brands fa-twitter text-[#1997B2] absolute top-0 right-0"></i>
+                        </div>
+
+                        <div class="profile">
+                            <div class="flex gap-4 items-center">
+                                <img src="/img/dev-img-4.jpeg" class="rounded-full w-16 h-16 object-cover">
+                                <div class="text">
+                                    <p class="font-bold text-white font-['alata'] ">Lorem Ipsum</p>
+                                    <p class="font-light text-sm text-gray-300 mt-1">@angesmR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <p class="text-gray-300 px-4 my-4" >
+                                Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Ratione repudiandae corrupti tenetur fugiat aliquid aspernatur nostrum distinctio eaque enim facilis illo accusamus sit praesentium modi voluptas, aut! Tempore, facilis quae est impedit.
+                            </p>
+
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="test-2 ">
+                    <div class="top w-full bg-[#33363A] py-10 px-6 border-2 border-white rounded-xl drop-shadow-2xl">
+                            <div class="twitter-logo relative">
+                            <i class="fa-brands fa-twitter text-[#1997B2] absolute top-0 right-0"></i>
+                        </div>
+
+                        <div class="profile ">
+                            <div class="flex gap-4 items-center">
+                                <img src="/img/dev-img-2.jpeg" class="rounded-full w-16 h-16 object-cover">
+                                <div class="text">
+                                    <p class="font-bold text-white font-['alata'] ">Lorem Ipsum</p>
+                                    <p class="font-light text-sm text-gray-300 mt-1">@angesmR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <p class="text-gray-300 px-4 my-4" >
+                                Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Ratione repudiandae corrupti tenetur fugiat aliquid aspernatur nostrum distinctio eaque enim facilis illo accusamus sit praesentium modi voluptas, aut! Tempore, facilis quae est impedit, reprehenderit odio, molestiae repellat soluta esse voluptatibus autem. Totam hic minima, deleniti, cum minus saepe iste molestias. Omnis, tempora obcaecati!
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed rerum beatae corporis autem qui, facere hic placeat ducimus saepe molestias excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum consequatur ut qui laborum veniam, quos error minima pariatur dolores doloremque. Eaque mollitia minima dicta, dolore cumque voluptate. Natus, unde! Vitae, reprehenderit, quibusdam.
+                            </p>
+
+                            <div class="img-container">
+                                <img src="/img/testimonial-img-2.jpeg" class="rounded-3xl my-8">
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                    
+                </div>
+
+                <div class="test-3 ">
+                    <div class="top w-full bg-[#33363A] py-10 px-6 border-2 border-white rounded-xl drop-shadow-2xl">
+                            <div class="twitter-logo relative">
+                            <i class="fa-brands fa-twitter text-[#1997B2] absolute top-0 right-0"></i>
+                        </div>
+
+                        <div class="profile ">
+                            <div class="flex gap-4 items-center">
+                                <img src="/img/dev-img-3.jpeg" class="rounded-full w-16 h-16 object-cover">
+                                <div class="text">
+                                    <p class="font-bold text-white font-['alata'] ">Lorem Ipsum</p>
+                                    <p class="font-light text-sm text-gray-300 mt-1">@angesmR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <p class="text-gray-300 px-4 my-4" >
+                                Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Ratione repudiandae corrupti tenetur fugiat aliquid aspernatur nostrum distinctio eaque enim facilis illo accusamus sit praesentium modi voluptas, aut! Tempore, facilis quae est impedit.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="bottom mt-10 w-full bg-[#33363A] py-10 px-6 border-2 border-white rounded-xl drop-shadow-2xl">
+                            <div class="twitter-logo relative">
+                            <i class="fa-brands fa-twitter text-[#1997B2] absolute top-0 right-0"></i>
+                        </div>
+
+                        <div class="profile">
+                            <div class="flex gap-4 items-center">
+                                <img src="/img/dev-img-5.jpeg" class="rounded-full w-16 h-16 object-cover">
+                                <div class="text">
+                                    <p class="font-bold text-white font-['alata'] ">Lorem Ipsum</p>
+                                    <p class="font-light text-sm text-gray-300 mt-1">@angesmR</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <p class="text-gray-300 px-4 my-4" >
+                                Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Ratione repudiandae corrupti tenetur fugiat aliquid aspernatur nostrum distinctio eaque enim facilis illo accusamus sit praesentium modi voluptas, aut! Tempore, facilis quae est impedit.
+
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magnam numquam iusto ipsam placeat atque fugit accusamus, amet nesciunt maxime dolorum animi repellat quisquam quod repudiandae reprehenderit obcaecati. Ducimus, nostrum incidunt hic.
+
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, doloremque nostrum officia.
+                            </p>
+                            <div class="img-container">
+                                <img src="/img/testimonial-img-5.jpeg" class="rounded-3xl my-8">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonials End -->
+
+
+        <!-- Bottom CTA Start -->
+        <div class="bottom-cta-container flex justify-center gap-10 flex-col p-10" style="background: url('/img/bg-bottom-cta.png'); background-position: center; background-repeat: no-repeat; background-size:cover; ">
+            
+            <p class="text-5xl font-['alata'] text-center text-white  ">Ready To Learn?</p>
+
+            <p class="text-white font-['alata']  text-center">Choose a Class and start learning!</p>
+
+            <button class="text-black rounded-full bg-white px-16 py-2 font-['orbitron'] cursor-pointer border-2 hover:border-bluee hover:transition-all text-center " style="align-self:center;" >
+                            Explore Classes →
+                        </button>
+        </div>
+        <!-- Bottom CTA End -->
+
+
+        <!-- Footer Start -->
+        <footer class="py-16 px-16" style="background: url('/img/bg-footer.png'); background-position: center; background-repeat: no-repeat; background-size:cover; ">
+            <div class="grid lg:grid-cols-5 gap-10">
+                <div class="flex flex-col gap-4">
+                    <div class="logo">
+                        <img src="/img/text-logo.png">
+                    </div>
+                     <p class="text-bluee">Start learning the skills for the web3 programming economy and get paid while you learn</p>
+                        <button class="rounded-full bg-bluee p-2 text-white " style="align-self:flex-start;">
+                            <span class="font-bold">@</span> Leave us a message
+                        </button>
+                </div>
+                <div></div>
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-bluee">Community</p>
+                    <p class="text-white">Facebook group</p>
+                    <p class="text-white">Linkedin group</p>
+                    <p class="text-white">FAQ</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-bluee">About us</p>
+                    <p class="text-white">Meet the Team</p>
+                    <p class="text-white">Partners</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-bluee">Contacts</p>
+                    <p class="text-white">Feel free to get in touch with us via phone or send us a message.</p>
+                    <p class="text-white">+1-301-340-3946
+                    info@draft.com</p>
+                </div>
+            </div>
+            <hr class="border-bluee my-4">
+            <div class="copyright flex justify-between">
+                <p class="text-bluee text-opacity-80 text-sm">
+                    © Pegasus 2022, All Rights Reserved.
+                </p>
+                <div class="brands">
+                    <i class="fa-brands cursor-pointer text-bluee fa-twitter"></i>
+                    <i class="fa-brands cursor-pointer text-bluee fa-facebook"></i>
+                    <i class="fa-brands cursor-pointer text-bluee fa-google"></i>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+
+        <!-- Login modal Start -->
+        <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                    </button>
+                    <div class="py-6 px-6 lg:px-8">
+                        <h3 class="mb-4 text-4xl font-medium text-bluee">Login</h3>
+                        <form class="space-y-6" action="#">
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Username</label>
+                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
+                            </div>
+                            <div>
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div class="flex justify-between">
+                                
+                                <a href="#" class="text-sm text-bluee hover:underline items-end">Lost Password?</a>
+                            </div>
+                            <button type="submit" class="w-full text-white bg-bluee shadow font-medium rounded-lg text-sm px-5 py-2.5 text-center">LOGIN</button>
+                            <div class="text-sm font-medium text-gray-500">
+                                Not registered? <a href="#" class="text-bluee hover:underline ">Create account</a>
+                            </div>
+                        </form>
+
+                        <div class="social-login space-y-6">
+                            <hr>
+                            <p class="text-sm text-gray-500 text-center">Login Using</p>
+
+                            <div class="icons gap-4 justify-center items-center flex">
+                                <img class="w-10 cursor-pointer" src="/img/Facebook.png" alt=""> 
+                                <img class="w-10 cursor-pointer" src="/img/Twitter.png" alt=""> 
+                                <img class="w-10 cursor-pointer" src="/img/Google.png" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Login modal End -->
+
+        <!-- GSAP + Scroll Trigger -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+        <!-- Flowbite JS -->
+        <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- My JS -->
+        <script src="script.js"></script>
+    </body>
+</html>
